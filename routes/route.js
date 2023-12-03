@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const film = require('./model');
+const film = require('../models/model');
 
 router.get('/film', function(req, res, next) {
     film.getAllFilm(function(err, rows) {
