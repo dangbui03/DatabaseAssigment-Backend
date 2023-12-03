@@ -2,8 +2,8 @@ const express = require("express");
 const app = express();
 const port = 8080
 
-mysqldb = require('./db').connection;
-app.use('/', require('./route'));
+mysqldb = require('./configs/db').connection;
+app.use('/', require('./routes/route'));
 
 // Root route handler
 app.get("/", (req, res) => {
