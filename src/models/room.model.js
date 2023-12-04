@@ -1,6 +1,6 @@
 const {connection} = require('../configs/db')
 
-const film = {
+const Room = {
     getAllRooms:function(callback) {
         return connection.query("CALL GetAllRooms()", callback);
     },
@@ -9,4 +9,4 @@ const film = {
     }
 }
 
-module.exports = film;
+module.exports = Room;

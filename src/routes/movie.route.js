@@ -5,7 +5,7 @@ const movieCT = require('../controllers/movie.controller')
 router.route('/movies')
     .get(movieCT.getAllMovies)
     
-router.route('/movie/:id')
+router.route('/movie')
     .get(movieCT.getMovieById)
 
 // router.route('/movie/sort/withreview')

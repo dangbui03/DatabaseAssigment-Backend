@@ -1,18 +1,18 @@
 const movieScreening = require('../models/movieScreening.model');
 
-const getAllMovieScreening = function(req, res, next) {
+const getAllMovieScreenings = function(req, res, next) {
     {
-        movieScreening.getAllMovieScreenings(function(err, rows) {
+        movieScreening.getAllMovieScreening(function(err, rows) {
             if(err){
                 res.status(500).json(err);
             }
             else{
-                res.status(200).json(rows);
+                res.status(200).json(rows[0]);
             }
         })
     }
 }
 
 module.exports = {
-    getAllMovieScreening
+    getAllMovieScreenings
 }

@@ -3,8 +3,9 @@ const router = express.Router();
 const movieScreeningCT = require('../controllers/movieScreening.controller')
 
 router.route('/screens')
-    .get(movieScreeningCT.getAllMovieScreening)
-    
+    .get(movieScreeningCT.getAllMovieScreenings)
+
 router.route('/screen')
+    .get()
 
 module.exports = router;

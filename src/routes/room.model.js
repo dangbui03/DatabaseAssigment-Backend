@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 router.route('/rooms')
-    get
+    .get()
     
 router.route('/room')
     .post()
