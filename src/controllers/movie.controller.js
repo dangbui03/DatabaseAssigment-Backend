@@ -14,12 +14,12 @@ const getAllMovies = function(req, res, next) {
 }
 
 const getMovieById = function (req, res, next) {
-    if(req.body){
-        movie.getMovieByIds(req.body.id, function(err, rows) {
+    if(req.params.id){
+        movie.getMovieByIds(req.params.id, function(err, rows) {
             if(err) {
                 res.status(500).json(err);
             } else {
-                res.status(200).json(rows[0]);
+                res.status(200).json(rows);
             }
         });
     } else {

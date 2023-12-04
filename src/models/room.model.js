@@ -2,10 +2,10 @@ const {connection} = require('../configs/db')
 
 const film = {
     getAllRooms:function(callback) {
-        return connection.query("CALL GetAllMovies()", callback);
+        return connection.query("CALL GetAllRooms()", callback);
     },
-    getRoomById:function(movieId, callback) {
-        return connection.query("CALL GetMovieById(?)", [movieId], callback);
+    getRoomById:function(id, callback) {
+        return connection.query(`CALL GetMovieById(${id})`, callback);
     }
 }
 

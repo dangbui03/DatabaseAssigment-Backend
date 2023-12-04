@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const movie = require('./movie.route');
-router.use('/', [movie]);
+const movieScreening = require('./movieScreening.route')
+router.use('/', [movie, movieScreening]);
 
 module.exports = router;
