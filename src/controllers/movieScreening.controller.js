@@ -13,6 +13,15 @@ const getAllMovieScreenings = function(req, res, next) {
     }
 }
 
+const createMovieScreening = function(req, res, next) {
+    const {id, rnumber, movietime} = req.body;
+    if (!(id && rnumber && movietime)) return res.status(500).json("INTERNAL SERVER ERROR");
+    else {
+        
+    }
+}
+
 module.exports = {
-    getAllMovieScreenings
+    getAllMovieScreenings,
+
 }
