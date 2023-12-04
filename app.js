@@ -2,8 +2,12 @@ const express = require("express");
 const app = express();
 const port = 8080
 
-mysqldb = require('./configs/db').connection;
-app.use('/', require('./routes/route'));
+app.use(express.urlencoded({ extended: false }));
+
+app.use(express.json());
+
+mysqldb = require('./src/configs/db').connection;
+app.use('/api/v2', require('./src/routes/movie.route'));
 
 // Root route handler
 app.get("/", (req, res) => {
