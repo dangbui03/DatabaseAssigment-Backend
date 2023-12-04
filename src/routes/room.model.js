@@ -1,10 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-router.route('/room')
-    .get(movieCT.getAllMovies)
-    .put()
+router.route('/rooms')
+    get
     
-router.route('/room/:id')
+router.route('/room')
     .post()
 module.exports = router;

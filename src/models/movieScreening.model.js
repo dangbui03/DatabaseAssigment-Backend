@@ -1,8 +1,8 @@
 const {connection} = require('../configs/db')
 
 const film = {
-    getAllMovieScreening:function(callback) {
-        return connection.query("CALL GetAllMovieScreening()", callback);
+    getAllMovieScreening:function(screen, callback) {
+        return connection.query("CALL GetAllMovieScreening(?, ?, ?)", callback);
     },
     addMovieScreening:function(sinhvien,callback){
 		return connection.query("Insert into sinhvien(name,class,dob) values(?,?,?)",[sinhvien.name,sinhvien.class,sinhvien.dob],callback);
