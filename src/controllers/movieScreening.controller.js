@@ -1,3 +1,4 @@
+const { urlencoded } = require('express');
 const movieScreening = require('../models/movieScreening.model');
 
 const getAllMovieScreenings = function(req, res, next) {
@@ -23,7 +24,13 @@ const createMovieScreenings = function(req, res, next) {
 
 const getMovieScreening = function(req, res, next) {
     if(req.query.id && req.query.rnumber && req.query.movietime) {
-        movieScreening.getAMovieScreening(req.query.id, req.query.rnumber, req.query.movietime, function(err, rows) {
+        const stringWithHyphens = req.query.movietime.replace(/\//g, '-');
+        const date = new Date(stringWithHyphens);
+        date.setHours((date.getHours() + 7)%24);
+        const formattedDate = date.toISOString().slice(0, 19).replace('T', ' ');
+        
+        console.log(formattedDate);
+        movieScreening.getAMovieScreening(req.query.id, req.query.rnumber, formattedDate, function(err, rows) {
             if (err) {
                 res.status(500).json(err);
             }

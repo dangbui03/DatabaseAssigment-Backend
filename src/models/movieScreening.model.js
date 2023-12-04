@@ -8,8 +8,7 @@ const movieScreening = {
         return connection.query("CALL CreateMovieScreening(?, ?, ?)")
     },
     getAMovieScreening:function(id, rnumber, movietime, callback) {
-        const formattedMovieTime = movietime.toISOString().slice(0, 19).replace('T', ' ');
-        return connection.query("CALL getAMovieScreening(?, ?, ?)", [id, rnumber, formattedMovieTime], callback)
+        return connection.query("CALL getAMovieScreening(?, ?, ?)", [id, rnumber, movietime], callback)
     }
 }
 
