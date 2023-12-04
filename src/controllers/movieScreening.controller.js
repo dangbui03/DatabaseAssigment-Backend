@@ -40,9 +40,25 @@ const getMovieScreening = function(req, res, next) {
     }
 }
 
+const getShowTimes = function(req, res, next) {
+    if(req.query.id) {
+        movieScreening.getShowTime(req.query.id, function(err, rows) {
+            if(err){
+                res.status(500).json(err);
+            }
+            else{
+                res.status(200).json(rows[0]);
+            }
+        });
+    } else {
+        res.status(500).json("INTERNAL SERVER ERROR");
+    }
+}
 
 
 module.exports = {
     getAllMovieScreenings,
     getMovieScreening,
+    getShowTimes,
+    createMovieScreenings
 }
