@@ -47,4 +47,17 @@ END //
 
 DELIMITER ;
 
-call GetAllMovieScreening();
+DELIMITER //
+
+CREATE PROCEDURE getAMovieScreening (
+  IN inputId CHAR(9),
+  IN inputRNumber CHAR(4),
+  IN inputMovieTime DATETIME
+)
+BEGIN
+    SELECT *
+    FROM movieScreening
+    WHERE ID = inputId AND RNUMBER = inputRNumber AND MOVIETIME = inputMovieTime;
+END //
+
+DELIMITER ;
