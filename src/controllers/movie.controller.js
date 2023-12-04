@@ -28,7 +28,31 @@ const getMovieById = function (req, res, next) {
     
 }
 
+const getMovieSortByReviews = function (req, res, next ){
+    movie.getMovieSortByReview(function(err, rows) {
+        if(err){
+            res.status(500).json(err);
+        }
+        else {
+            res.json(rows);
+        }
+    })
+}
+
+const getMovieSortByMostSolds = function (req, res, next ){
+    movie.getMovieSortByMostSold(function(err, rows) {
+        if(err){
+            res.status(500).json(err);
+        }
+        else {
+            res.json(rows);
+        }
+    })
+}
+
 module.exports = {
     getAllMovies,
-    getMovieById
+    getMovieById,
+    getMovieSortByReviews,
+    getMovieSortByMostSolds
 }

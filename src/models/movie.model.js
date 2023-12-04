@@ -6,6 +6,12 @@ const film = {
     },
     getMovieByIds:function(id, callback) {
         return connection.query("CALL GetMovieById(?)", [id], callback);
+    },
+    getMovieSortByReview:function(callback) {
+        return connection.query("CALL rating()", callback)
+    },
+    getMovieSortByMostSold:function(callback) {
+        return connection.query("CALL mostSold()", callback)
     }
 }
 
