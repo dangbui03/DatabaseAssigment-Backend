@@ -61,3 +61,21 @@ BEGIN
 END //
 
 DELIMITER ;
+
+DELIMITER //
+
+CREATE PROCEDURE GetAllCustomer()
+BEGIN
+    SELECT * FROM customer;
+END //
+
+DELIMITER ;
+
+DELIMITER //
+
+CREATE PROCEDURE GetCustomerById(IN inputCustomerId char(9))
+BEGIN
+    SELECT * FROM customer WHERE CID = inputCustomerId;
+END //
+
+DELIMITER ;

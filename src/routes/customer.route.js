@@ -1,8 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const movieCT = require('../controllers/movie.controller')
+const customerCT = require('../controllers/customer.controller')
+
+router.route('/customers')
+    .get(customerCT.getAllCustomer)
 
 router.route('/customer')
-router.route('/customer/:id')
-
+    .get(customerCT.getCustomers)
+    
 module.exports = router;

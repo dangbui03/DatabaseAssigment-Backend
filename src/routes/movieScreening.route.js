@@ -8,4 +8,7 @@ router.route('/screens')
 router.route('/screen')
     .get(movieScreeningCT.getMovieScreening)
 
+router.route('/screen/time')
+    .get()
+
 module.exports = router;
