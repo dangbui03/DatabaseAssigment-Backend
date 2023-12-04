@@ -5,7 +5,7 @@ const movieScreeningCT = require('../controllers/movieScreening.controller')
 router.route('/screens')
     .get(movieScreeningCT.getAllMovieScreenings)
 
-router.route('/screen')
-    .get()
+// router.route('/screen')
+//     .get()
 
 module.exports = router;

@@ -1,4 +1,3 @@
-use cinema;
 DELIMITER //
 
 CREATE PROCEDURE GetAllMovies()
@@ -18,3 +17,34 @@ BEGIN
 END //
 
 DELIMITER ;
+
+DELIMITER //
+
+CREATE PROCEDURE GetAllRooms()
+BEGIN
+    SELECT * FROM room;
+END //
+
+DELIMITER ;
+call GetAllMovies();
+
+DELIMITER //
+CREATE PROCEDURE GetRoomById (IN roomId char(4))
+BEGIN
+    SELECT *
+    FROM room
+    WHERE RNUMBER = roomId;
+END //
+
+DELIMITER ;
+
+DELIMITER //
+
+CREATE PROCEDURE GetAllMovieScreening()
+BEGIN
+    SELECT * FROM movieScreening;
+END //
+
+DELIMITER ;
+
+call GetAllMovieScreening();

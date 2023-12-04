@@ -7,9 +7,9 @@ const getAllMovieScreenings = function(req, res, next) {
                 res.status(500).json(err);
             }
             else{
-                res.status(200).json(rows[0]);
+                res.status(200).json(rows);
             }
-        })
+        });
     }
 }
 

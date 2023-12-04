@@ -1,9 +1,11 @@
 const express = require('express');
 const router = express.Router();
+const roomCT = require('../controllers/room.controller')
 
 router.route('/rooms')
-    .get()
+    .get(roomCT.getAllRoom)
     
 router.route('/room')
-    .post()
+    .get(roomCT.getRoomByIds)
+
 module.exports = router;
