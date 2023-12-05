@@ -4,8 +4,9 @@ const ticket = {
     ticketPrice:function(cid, callback) {
         return connection.query("SELECT cal(?) AS result", [cid], callback);
     },
-    updatePriceTicket:function(tid, )
+    updatePriceTicket:function(tid, t_price, callback) {
 
+    },
     ticketGen:function(id, rnumber, movietime, callback) {
         return connection.query("CALL gen_ticket(?, ?, ?)", [id, rnumber, movietime], callback)
     },
