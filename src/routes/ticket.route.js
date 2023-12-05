@@ -4,7 +4,7 @@ const ticketCT = require('../controllers/ticket.controller')
 
 router.route('/ticket/price')
     .get(ticketCT.ticketPriceByAge)
-    .put()
+    .put(ticketCT.updatePriceTicket)
     
 router.route('/ticket/buyticket')
     .post()

@@ -18,8 +18,14 @@ const updatePriceTicket = function(req, res, next) {
     const {tid, t_price} = req.body;
     if(tid && t_price) {
         ticket.updatePriceTicket(tid, t_price, function(err, rows) {
-            
-        })
+            if(err) {
+                res.status(500).json(err);
+            } else {
+                res.status(200).json({ message: `has change price to ${t_price}`});
+            }
+        });
+    } else {
+        res.status(500).json({ message: "INTERNAL SERVER ERROR"});
     }
 }
 
@@ -78,5 +84,6 @@ module.exports = {
     ticketPriceByAge,
     ticketGeneration,
     getAllTicketofMovies,
-    getTicketByIds
+    getTicketByIds,
+    updatePriceTicket
 }
