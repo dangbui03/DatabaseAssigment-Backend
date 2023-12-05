@@ -15,7 +15,12 @@ const ticketPriceByAge = function(req, res, next) {
 }
 
 const updatePriceTicket = function(req, res, next) {
-    
+    const {tid, t_price} = req.body;
+    if(tid && t_price) {
+        ticket.updatePriceTicket(tid, t_price, function(err, rows) {
+            
+        })
+    }
 }
 
 const ticketGeneration = function(req, res, next) {

@@ -94,3 +94,14 @@ BEGIN
 END //
 
 DELIMITER ;
+
+DELIMITER //
+
+CREATE PROCEDURE getTicketById (IN inputId char(9))
+BEGIN
+    SELECT *
+    FROM ticket
+    WHERE TID = inputId;
+END //
+
+DELIMITER ;
