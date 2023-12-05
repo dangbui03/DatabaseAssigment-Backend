@@ -17,7 +17,7 @@ const ticketPriceByAge = function(req, res, next) {
 const createBuyTicket = function(req, res, next) {
     const {tid, id, rnumber, movietime} = req.body;
     if(tid && id && rnumber && movietime) {
-        ticket.
+        
     }
 }
 
