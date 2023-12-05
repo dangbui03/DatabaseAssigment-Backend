@@ -114,3 +114,21 @@ BEGIN
 END //
 
 DELIMITER ;
+
+DELIMITER //
+
+CREATE PROCEDURE createBuyTicket(
+    IN inputTID CHAR(9),
+    IN inputID INT,
+    IN inputRNUMBER CHAR(4),
+    IN inputMOVIETIME DATETIME,
+    IN inputCID CHAR(9)
+)
+BEGIN
+    INSERT INTO buy_ticket (TID, ID, RNUMBER, MOVIETIME, CID)
+    VALUES (inputTID, inputID, inputRNUMBER, inputMOVIETIME, inputCID);
+END //
+
+DELIMITER ;
+
+select * from buy_ticket;

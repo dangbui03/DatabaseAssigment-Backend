@@ -7,7 +7,7 @@ router.route('/ticket/price')
     .put(ticketCT.updatePriceTicket)
     
 router.route('/ticket/buyticket')
-    .post()
+    .post(ticketCT.createBuyTicket)
 
 router.route('/ticket/gen')
     .post(ticketCT.ticketGeneration)
