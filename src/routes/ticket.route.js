@@ -10,7 +10,7 @@ router.route('/ticket/buyticket')
     .post()
 
 router.route('/ticket/gen')
-    .get(ticketCT.ticketGeneration)
+    .post(ticketCT.ticketGeneration)
 
 router.route('/tickets')
     .get(ticketCT.getAllTicketofMovies)
