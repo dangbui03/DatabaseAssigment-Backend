@@ -23,9 +23,8 @@ const getRoomByIds = function (req, res, next) {
             }
         });
     } else {
-        res.status(500).json("INTERNAL SERVER ERROR");
+        res.status(500).json({ message: "INTERNAL SERVER ERROR"});
     }
-    
 }
 
 module.exports = {

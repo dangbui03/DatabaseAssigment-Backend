@@ -6,8 +6,9 @@ const movieScreening = require('./movieScreening.route')
 const room = require('./room.route')
 const customer = require('./customer.route')
 const gift = require('./present.route')
+const ticket = require('./ticket.route')
 
-router.use('/', [movie, movieScreening, room, customer, gift]);
+router.use('/', [movie, movieScreening, room, customer, gift, ticket]);
 
 
 module.exports = router;

@@ -37,6 +37,8 @@ const getMovieScreening = function(req, res, next) {
                 res.status(200).json(rows[0]);
             }
         });
+    } else {
+        res.status(500).json({ message: "INTERNAL SERVER ERROR"});
     }
 }
 
