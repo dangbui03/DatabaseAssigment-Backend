@@ -15,4 +15,7 @@ router.route('/ticket/gen')
 router.route('/tickets')
     .get(ticketCT.getAllTicketofMovies)
 
+router.route('/ticket')
+    .get(ticketCT.getTicketByIds)
+
 module.exports = router;

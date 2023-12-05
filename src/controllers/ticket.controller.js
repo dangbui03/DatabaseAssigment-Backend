@@ -50,7 +50,7 @@ const getAllTicketofMovies = function (req, res, next) {
                 res.status(500).json(err);
             }
             else{
-                res.status(200).json(rows);
+                res.status(200).json(rows[0]);
             }
         });
     } else {
@@ -58,8 +58,20 @@ const getAllTicketofMovies = function (req, res, next) {
     }
 }
 
+const getTicketByIds = function (req, res, next) {
+    ticket.getTicketById(req.query.tid, function(err, rows) {
+        if (err) {
+            res.status(500).json(err);
+        }
+        else{
+            res.status(200).json(rows[0]);
+        }
+    });
+}
+
 module.exports = {
     ticketPriceByAge,
     ticketGeneration,
     getAllTicketofMovies,
+    getTicketByIds
 }
