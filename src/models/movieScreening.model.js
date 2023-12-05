@@ -10,6 +10,9 @@ const movieScreening = {
     updatedMovieScreening:function(id, rnumber, movietime, new_id, new_rnumber, new_movietime, callback) {
         return connection.query("CALL UpdateMovieScreening(?,?,?,?,?,?)", [id, rnumber, movietime, new_id, new_rnumber, new_movietime], callback);
     },
+    deleteMovieScreening:function(id, rnumber, movietime, callback) {
+        return connection.query("CALL DeleteMovieScreening(?, ?, ?)", [id, rnumber, movietime], callback)
+    },
     getAMovieScreening:function(id, rnumber, movietime, callback) {
         return connection.query("CALL getAMovieScreening(?, ?, ?)", [id, rnumber, movietime], callback)
     },

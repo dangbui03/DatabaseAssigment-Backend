@@ -9,6 +9,7 @@ router.route('/screen')
     .get(movieScreeningCT.getMovieScreening)
     .post(movieScreeningCT.createMovieScreenings)
     .put(movieScreeningCT.updatedMovieScreening)
+    .delete(movieScreeningCT.deleteMovieScreening)
 
 router.route('/screen/time')
     .get(movieScreeningCT.getShowTimes)
