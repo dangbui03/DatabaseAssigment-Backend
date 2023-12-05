@@ -9,6 +9,10 @@ router.route('/ticket/price')
 router.route('/ticket/buyticket')
     .post()
 
-router.route('/tickets')
+router.route('/ticket/gen')
     .get(ticketCT.ticketGeneration)
+
+router.route('/tickets')
+    .get(ticketCT.getAllTicketofMovies)
+
 module.exports = router;

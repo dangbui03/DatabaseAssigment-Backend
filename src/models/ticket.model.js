@@ -6,6 +6,9 @@ const ticket = {
     },
     ticketGen:function(id, rnumber, movietime, callback) {
         return connection.query("CALL gen_ticket(?, ?, ?)", [id, rnumber, movietime], callback)
+    },
+    getAllTicketofMovie:function(id, rnumber, movietime, callback) {
+        return connection.query("CALL getAllTicketofMovie(?, ?, ?)", [id, rnumber, movietime], callback)
     }
 }
 

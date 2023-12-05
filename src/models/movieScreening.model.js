@@ -5,7 +5,7 @@ const movieScreening = {
         return connection.query("CALL GetAllMovieScreening()", callback);
     },
     createMovieScreening:function(id, callback) {
-        return connection.query("CALL CreateMovieScreening(?, ?, ?)")
+        return connection.query("CALL CreateMovieScreening(?, ?, ?), [")
     },
     getAMovieScreening:function(id, rnumber, movietime, callback) {
         return connection.query("CALL getAMovieScreening(?, ?, ?)", [id, rnumber, movietime], callback)
