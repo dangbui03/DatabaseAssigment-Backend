@@ -79,3 +79,18 @@ BEGIN
 END //
 
 DELIMITER ;
+
+DELIMITER //
+
+CREATE PROCEDURE getAllTicketofMovie (
+  IN inputId INT,
+  IN inputRNumber CHAR(4),
+  IN inputMovieTime DATETIME
+)
+BEGIN
+    SELECT *
+    FROM ticket
+    WHERE ID = inputId AND RNUMBER = inputRNumber AND MOVIETIME = inputMovieTime;
+END //
+
+DELIMITER ;
