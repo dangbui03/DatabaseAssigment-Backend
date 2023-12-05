@@ -1,4 +1,3 @@
-use cinema;
 DELIMITER //
 
 CREATE PROCEDURE GetAllMovies()
@@ -27,7 +26,7 @@ BEGIN
 END //
 
 DELIMITER ;
-#call GetAllMovies();
+call GetAllMovies();
 
 DELIMITER //
 CREATE PROCEDURE GetRoomById (IN roomId char(4))
@@ -39,7 +38,6 @@ END //
 
 DELIMITER ;
 
-#call GetRoomById('B003');
 DELIMITER //
 
 CREATE PROCEDURE GetAllMovieScreening()
@@ -49,28 +47,20 @@ END //
 
 DELIMITER ;
 
-#call GetAllMovieScreening();
-
 DELIMITER //
 
 CREATE PROCEDURE getAMovieScreening (
   IN inputId CHAR(9),
   IN inputRNumber CHAR(4),
-  IN inputMDURATION DATETIME
+  IN inputMovieTime DATETIME
 )
 BEGIN
     SELECT *
     FROM movieScreening
-    WHERE ID = inputId AND RNUMBER = inputRNumber AND MDURATION = inputMDURATION;
+    WHERE ID = inputId AND RNUMBER = inputRNumber AND MOVIETIME = inputMovieTime;
 END //
 
 DELIMITER ;
-
-#call getAMovieScreening(111111124, 'A002', '2023-12-01 08:30:00');
-#select * from moviescreening;
-#2023-12-01T01:30:00.000Z
-
-DELIMITER //
 
 DELIMITER //
 
@@ -95,12 +85,12 @@ DELIMITER //
 CREATE PROCEDURE getAllTicketofMovie (
   IN inputId INT,
   IN inputRNumber CHAR(4),
-  IN inputMDURATION DATETIME
+  IN inputMovieTime DATETIME
 )
 BEGIN
     SELECT *
     FROM ticket
-    WHERE ID = inputId AND RNUMBER = inputRNumber AND MDURATION = inputMDURATION;
+    WHERE ID = inputId AND RNUMBER = inputRNumber AND MOVIETIME = inputMovieTime;
 END //
 
 DELIMITER ;
@@ -115,8 +105,6 @@ BEGIN
 END //
 
 DELIMITER ;
-
-DELIMITER //
 
 CREATE PROCEDURE UpdateTicket(IN inputTID CHAR(9), IN newPrice INT)
 BEGIN
