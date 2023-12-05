@@ -1,11 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const movieCT = require('../controllers/movie.controller')
+const reviewCT = require('../controllers/review.controller')
 
 router.route('/review')
-    .get(movieCT.getAllMovies)
-    
-router.route('/movie/:id')
-    .get(movieCT.getMovieById)
+    .post(reviewCT.createReviews)
 
 module.exports = router;
