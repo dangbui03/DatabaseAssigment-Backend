@@ -25,7 +25,14 @@ const createBuyTicket = function(req, res, next) {
             if(err) {
                 res.status(500).json(err);
             } else { 
-                res.status(200).json({ message: "SUCCESS CREATED" });
+                res.status(200).json({ 
+                    message: "SUCCESS CREATED",
+                    tid,
+                    id,
+                    rnumber,
+                    formattedDate,
+                    cid
+                });
             }
         });
     } else {

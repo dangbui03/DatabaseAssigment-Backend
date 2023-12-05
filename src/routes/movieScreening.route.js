@@ -7,8 +7,8 @@ router.route('/screens')
 
 router.route('/screen')
     .get(movieScreeningCT.getMovieScreening)
-    .put()
-    .post()
+    .post(movieScreeningCT.createMovieScreenings)
+    .put(movieScreeningCT.updatedMovieScreening)
 
 router.route('/screen/time')
     .get(movieScreeningCT.getShowTimes)

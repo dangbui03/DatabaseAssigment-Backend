@@ -26,7 +26,7 @@ BEGIN
 END //
 
 DELIMITER ;
-call GetAllMovies();
+#call GetAllMovies();
 
 DELIMITER //
 CREATE PROCEDURE GetRoomById (IN roomId char(4))
@@ -131,4 +131,26 @@ END //
 
 DELIMITER ;
 
-select * from buy_ticket;
+DELIMITER //
+
+CREATE PROCEDURE UpdateMovieScreening(
+    IN id_val INT,
+    IN rnumber_val CHAR(4),
+    IN movietime_val DATETIME,
+    IN new_id_val INT,
+    IN new_rnumber_val CHAR(4),
+    IN new_movietime_val DATETIME
+)
+BEGIN
+    UPDATE movieScreening
+    SET 
+        ID = new_id_val,
+        RNUMBER = new_rnumber_val,
+        MOVIETIME = new_movietime_val
+    WHERE
+        ID = id_val AND
+        RNUMBER = rnumber_val AND
+        MOVIETIME = movietime_val;
+END //
+
+DELIMITER ;
